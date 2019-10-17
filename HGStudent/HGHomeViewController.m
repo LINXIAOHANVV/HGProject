@@ -99,8 +99,8 @@
         [self.tableView reloadData];
     }];
     [self.viewModel.failureObject subscribeNext:^(id x) {
-//        HGHomeModel *model = x;
-//        self.dataArr = model.data;
+        HGHomeModel *model = x;
+        self.dataArr = model.data;
     }];
     
     [self.viewModel exchangeData];
