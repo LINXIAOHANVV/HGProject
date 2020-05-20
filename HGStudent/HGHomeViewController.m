@@ -12,6 +12,7 @@
 #import "HGBottomCell.h"
 #import "DBManager.h"
 
+#import "HGHomeAViewController.h"
 #import "HGHomeViewModel.h"
 #import <ARKit/ARKit.h>
 
@@ -20,6 +21,10 @@
 @property (nonatomic, strong) HGHomeViewModel *viewModel;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArr;
+@property (nonatomic, copy) NSArray *aArr;
+@property (nonatomic, strong) NSArray *bArr;
+@property (nonatomic, strong) NSMutableArray *cArr; //可变类型只能使用 strong 修饰，copy修饰会崩溃
+@property (nonatomic, copy) NSMutableArray *dArr;
 
 @property (nonatomic, strong) ARSCNView *sceneView;
 
@@ -37,14 +42,29 @@
     
     NSLog(@"hhhhhhhh===%@",NSHomeDirectory());
     
-    
-//    [self initUI];
+    NSLog(@"1");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+    [self initUI];
+    self.aArr = self.dataArr;
+    self.bArr = self.dataArr;
+    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:@"1"];
+//    self.cArr = [NSMutableArray array];
+//    self.dArr = [NSMutableArray array];
+//    [self.cArr addObject:@"1"];
+//    [self.dArr addObject:@"1"];
+//    NSLog(@"self.dArr == %@",self.dArr);
+//    [self.cArr removeObject:@"1"];
+//    [self.dArr removeObject:@"1"];
+//    NSLog(@"self.dArr == %@",self.dArr);
     
 //    [self loadData];
     
 //    [self loadAR];
     
-    [self initWebView];
+//    [self initWebView];
 }
 
 - (void)initWebView {
@@ -75,9 +95,9 @@
     [scene.rootNode addChildNode:node];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBar.hidden = YES;
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    self.navigationController.navigationBar.hidden = YES;
+//}
 
 - (void)initUI {
 
@@ -219,7 +239,9 @@
 //cell的选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    
+    HGHomeAViewController *vc = [[HGHomeAViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

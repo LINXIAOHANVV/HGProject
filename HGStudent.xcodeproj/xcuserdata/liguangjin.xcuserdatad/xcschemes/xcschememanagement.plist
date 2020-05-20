@@ -27,7 +27,7 @@
 		<key>TargetTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>33</integer>
 		</dict>
 		<key>TargetUITests.xcscheme</key>
 		<dict>
@@ -37,7 +37,7 @@
 		<key>TargetUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>34</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>

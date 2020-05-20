@@ -99,6 +99,7 @@
 		622AEEC22272E0EC00BCA6A3 /* 三方库.md in Resources */ = {isa = PBXBuildFile; fileRef = 622AEEC12272E0EC00BCA6A3 /* 三方库.md */; };
 		622AEEC42272E10800BCA6A3 /* 优秀文章.md in Resources */ = {isa = PBXBuildFile; fileRef = 622AEEC32272E10800BCA6A3 /* 优秀文章.md */; };
 		622AEEC62272E11800BCA6A3 /* 面试.md in Resources */ = {isa = PBXBuildFile; fileRef = 622AEEC52272E11800BCA6A3 /* 面试.md */; };
+		62300F47238E4229000877B8 /* HGHomeAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62300F46238E4229000877B8 /* HGHomeAViewController.m */; };
 		6233C881229798FD006D4557 /* AdHubSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6233C878229798FC006D4557 /* AdHubSDK.bundle */; };
 		6233C882229798FD006D4557 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6233C879229798FC006D4557 /* BUAdSDK.framework */; };
 		6233C883229798FD006D4557 /* FmobiBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6233C87A229798FC006D4557 /* FmobiBundle.bundle */; };
@@ -379,6 +380,8 @@
 		622AEEC12272E0EC00BCA6A3 /* 三方库.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "三方库.md"; sourceTree = "<group>"; };
 		622AEEC32272E10800BCA6A3 /* 优秀文章.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "优秀文章.md"; sourceTree = "<group>"; };
 		622AEEC52272E11800BCA6A3 /* 面试.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "面试.md"; sourceTree = "<group>"; };
+		62300F45238E4229000877B8 /* HGHomeAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGHomeAViewController.h; sourceTree = "<group>"; };
+		62300F46238E4229000877B8 /* HGHomeAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGHomeAViewController.m; sourceTree = "<group>"; };
 		6233C878229798FC006D4557 /* AdHubSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AdHubSDK.bundle; sourceTree = "<group>"; };
 		6233C879229798FC006D4557 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
 		6233C87A229798FC006D4557 /* FmobiBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FmobiBundle.bundle; sourceTree = "<group>"; };
@@ -1176,6 +1179,8 @@
 				6241B387221A5082006E0E72 /* model */,
 				6294CFFA1E27114C00287D7E /* HGHomeViewController.h */,
 				6294CFFB1E27114C00287D7E /* HGHomeViewController.m */,
+				62300F45238E4229000877B8 /* HGHomeAViewController.h */,
+				62300F46238E4229000877B8 /* HGHomeAViewController.m */,
 				627F1D8A1E2868A200A4A67C /* view */,
 			);
 			name = home;
@@ -1434,7 +1439,6 @@
 				6298FB9B1E25C5A500074D66 /* Sources */,
 				6298FB9C1E25C5A500074D66 /* Frameworks */,
 				6298FB9D1E25C5A500074D66 /* Resources */,
-				319ADBAF0B46504E5E4ECE28 /* [CP] Embed Pods Frameworks */,
 				5EDC1186D898528944040534 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -1674,28 +1678,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HGStudent-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		319ADBAF0B46504E5E4ECE28 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HGStudent/Pods-HGStudent-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5EDC1186D898528944040534 /* [CP] Copy Pods Resources */ = {
@@ -1704,13 +1696,46 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HGStudent/Pods-HGStudent-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/UMSocialSDKResourcesNew.bundle",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSCommentDetailController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSCommentInputController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSCommentInputControlleriPad.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMShareEditViewController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMShareEditViewControlleriPad.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSLoginViewController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSnsAccountViewController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/SocialSDKXib/UMSShareListController.xib",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/en.lproj",
+				"${PODS_ROOT}/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5.2.1/UMSocial_Sdk_5.2.1/zh-Hans.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResourcesNew.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSCommentDetailController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSCommentInputController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSCommentInputControlleriPad.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMShareEditViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMShareEditViewControlleriPad.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSLoginViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSnsAccountViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSShareListController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HGStudent/Pods-HGStudent-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HGStudent/Pods-HGStudent-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1771,6 +1796,7 @@
 				621BAA8A1F68D9C600485978 /* WFReplyBody.m in Sources */,
 				6294D0101E2757C600287D7E /* UIViewExt.m in Sources */,
 				62E3C0F31EA4CD4C00462476 /* GTMBase64.m in Sources */,
+				62300F47238E4229000877B8 /* HGHomeAViewController.m in Sources */,
 				6241B38E221A50FA006E0E72 /* HGHomeModel.m in Sources */,
 				6294D0021E27116800287D7E /* HGStudyViewController.m in Sources */,
 				626B8AFB2282665200F1E01F /* GCDAsyncUdpSocket.m in Sources */,

@@ -144,6 +144,29 @@
 //// iPhoneX的状态栏高度差值
 //#define kTopBarDifHeight    (CGFloat)(YYISiPhoneX?(24):(0))
 
+/**
+ * MARK:-屏幕尺寸宏定义
+ * 导航栏高度 状态栏高度 底部tabbar高度 苹果X底部安全区高度
+ */
+//屏幕rect
+#define SCREEN_BOUNDS ([UIScreen mainScreen].bounds)
+//屏幕宽度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+//屏幕高度
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+//屏幕分辨率
+#define SCREEN_RESOLUTION (SCREEN_WIDTH * SCREEN_HEIGHT * ([UIScreen mainScreen].scale))
+//iPhone X系列判断
+#define  IS_iPhoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size)  || CGSizeEqualToSize(CGSizeMake(414.f, 896.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(896.f, 414.f), [UIScreen mainScreen].bounds.size))
+//状态栏高度
+#define StatusBarHeight (IS_iPhoneX ? 44.f : 20.f)
+//导航栏高度
+#define NavBarHeight (44.f+StatusBarHeight)
+//底部标签栏高度
+#define TabBarHeight (IS_iPhoneX ? (49.f+34.f) : 49.f)
+//安全区域高度
+#define TabbarSafeBottomMargin     (IS_iPhoneX ? 34.f : 0.f)
+
 
 // TCP 相关
 #define DEF_STR_ENCODING    NSUTF8StringEncoding
@@ -175,7 +198,7 @@
  */
 #ifdef DEBUG
 //#define NSLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
-#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+//#define NSLog(...) printf("%f %s\n",[[NSDate date]timeIntervalSince1970],[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
 #else
 #define NSLog(format, ...)
 #endif

@@ -1,0 +1,6 @@
+framework module TBJSONModel {
+  umbrella header "TBJSONModel.h"
+
+  export *
+  module * { export * }
+}

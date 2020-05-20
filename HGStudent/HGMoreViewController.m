@@ -38,6 +38,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(leftButtonAction:)];
+    self.navigationItem.leftBarButtonItem = leftButton;
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(rightButtonAction:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
     self.navigationItem.title = @"更多4";
 //    self.view.backgroundColor = [UIColor redColor];
     

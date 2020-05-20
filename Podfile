@@ -1,5 +1,8 @@
 platform :ios, '8.0'
 
+source "https://github.com/CocoaPods/Specs.git"
+source "https://github.com/aliyun/aliyun-specs.git"
+
 target 'HGStudent' do
 
 pod 'MBProgressHUD', '~> 1.0.0'
@@ -24,6 +27,7 @@ pod 'BlocksKit'  #让UIKit支持block式编程
 pod 'ReactiveCocoa', '2.5'  #定义一个统一的事件处理接口，这样它们可以非常简单地进行链接、过滤和组合
 
 pod 'WebViewJavascriptBridge', '~> 6.0' #js交互
+pod 'AlicloudCrash' , '~> 1.1.0'
 
 #pod 'AlicloudPush', '~> 1.9.2' #阿里云推送
 #pod 'NIMKit'     #简单版本

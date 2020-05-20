@@ -14,6 +14,26 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - AlicloudCrash (1.1.1):
+    - AlicloudHAUtil
+    - AlicloudUtils
+    - AliHACore (~> 10.0.3)
+    - TBCrashReporter (~> 10.0.3)
+  - AlicloudHAUtil (1.0.1):
+    - AliHACore
+    - TBRest
+    - ZipArchive
+  - AlicloudUTDID (1.5.0.90)
+  - AlicloudUtils (1.3.8):
+    - AlicloudUTDID
+  - AliHACore (10.0.3.5):
+    - AliHALogEngine (>= 10.0.2)
+    - AliHAProtocol (>= 10.0.2.1)
+    - TBJSONModel
+    - TBRest (>= 1.0.0.18)
+  - AliHALogEngine (10.0.5)
+  - AliHAProtocol (10.0.3):
+    - TBJSONModel
   - BaiduMapKit (3.0.0)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
@@ -30,9 +50,11 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - CrashReporter (10.0.3)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - JDYThreadTrace (10.0.0)
   - JPush-iOS-SDK (2.1.9)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
@@ -52,13 +74,22 @@ PODS:
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SVProgressHUD (2.0.3)
+  - TBCrashReporter (10.0.3.1):
+    - AliHAProtocol (>= 1.0.5.3)
+    - CrashReporter (>= 1.3.6.18)
+    - JDYThreadTrace (>= 1.0.0.12)
+    - TBRest (>= 10.0.4.2)
+  - TBJSONModel (0.1.15.1)
+  - TBRest (10.1.1.0)
   - TPKeyboardAvoiding (1.3)
   - UMengSocialCOM (5.2.1)
   - WebViewJavascriptBridge (6.0.3)
   - WZLBadge (1.2.5)
+  - ZipArchive (1.4.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AlicloudCrash (~> 1.1.0)
   - BaiduMapKit
   - BlocksKit
   - FMDB
@@ -77,11 +108,55 @@ DEPENDENCIES:
   - WebViewJavascriptBridge (~> 6.0)
   - WZLBadge (~> 1.2.5)
 
+SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - AlicloudCrash
+    - AlicloudHAUtil
+    - AlicloudUTDID
+    - AlicloudUtils
+    - AliHACore
+    - AliHALogEngine
+    - AliHAProtocol
+    - CrashReporter
+    - JDYThreadTrace
+    - TBCrashReporter
+    - TBJSONModel
+    - TBRest
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - BaiduMapKit
+    - BlocksKit
+    - FMDB
+    - JPush-iOS-SDK
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - ReactiveCocoa
+    - RegexKitLite
+    - SDCycleScrollView
+    - SDWebImage
+    - SVProgressHUD
+    - TPKeyboardAvoiding
+    - UMengSocialCOM
+    - WebViewJavascriptBridge
+    - WZLBadge
+    - ZipArchive
+
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AlicloudCrash: 2b08f6fbbf8a7e14596414256c2ee5ee34d0816c
+  AlicloudHAUtil: 99e5929118fdd73f8ac27807c13e2cded5d4b048
+  AlicloudUTDID: 314b33cabbe33cf4b648a6789cc5cb91ba5065e4
+  AlicloudUtils: 3e1106c726d4f9c80272b6e2135c561936173a10
+  AliHACore: 1ffb9a5db0a1c854d73aa55c49861ba1a2b5bfa3
+  AliHALogEngine: 22b83d8cfb4fbc2c22a2238574bc295b2dbba48d
+  AliHAProtocol: fd6ba550c1888b51cc1cd55a21f220fccadd7a26
   BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  CrashReporter: f8374b53ef73d1ae23e76331fd648bfc1cd7ff78
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  JDYThreadTrace: 912a762430ed98ce4ccdc85004366dd5bb5ce72e
   JPush-iOS-SDK: c74e4f8d066dacf27c3d37257ee20157e44c316c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -92,11 +167,15 @@ SPEC CHECKSUMS:
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  TBCrashReporter: 126d48189fd8138c9c1233950a1b3203369f46f4
+  TBJSONModel: 2c95a8789bc3d98a2a773dd09c41ddeb902a200b
+  TBRest: 36fcaf59c76692eae5acf4c8fd469748d453a327
   TPKeyboardAvoiding: a5138f318c06fb3e151f886e18ce4a72695d9cbe
   UMengSocialCOM: 074c135ce349aa4c8848d3fb8458757bcb6ffb67
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   WZLBadge: 16c08aa0a645e2591690f21cbcb410a3d878c7ac
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 8cee0d6b3d91a77a3b507c214fe5bc626c28c9ad
+PODFILE CHECKSUM: 6c5eb0df2666ee2f314edf0f82937f713baba5b6
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.9.1
